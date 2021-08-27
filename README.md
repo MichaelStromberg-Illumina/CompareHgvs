@@ -1,6 +1,6 @@
 # CompareHgvs
 
-This project contain two tools that are useful for benchmarking Nirvana HGVS against a truth data set:
+This project contains two tools that are useful for benchmarking Nirvana HGVS against a truth data set:
 
  - CompareHgvs
  - ExtractGenesFromNirvanaJson
