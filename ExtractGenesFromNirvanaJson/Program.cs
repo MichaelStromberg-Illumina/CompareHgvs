@@ -56,6 +56,7 @@ namespace ExtractGenesFromNirvanaJson
                     
                     writer.WriteLine($"{variant.VID}\t{transcript.HgvsCoding}");
                     writer.WriteLine($"{variant.VID}\t{transcript.HgvsProtein}");
+                    writer.WriteLine($"{transcript.TranscriptId}\t{transcript.Consequences}");
                 }
             }
         }

@@ -94,13 +94,15 @@ namespace CompareHgvs
             string geneId = transcript.geneId;
             if (!_entrezGeneIds.Contains(geneId)) return;
 
-            string hgvsProtein  = transcript.hgvsp;
-            string transcriptId = transcript.transcript;
-            string proteinId    = transcript.proteinId;
+            string   hgvsProtein       = transcript.hgvsp;
+            string   transcriptId      = transcript.transcript;
+            string   proteinId         = transcript.proteinId;
+            string[] consequences      = transcript.consequence.ToObject<string[]>();
+            string   consequenceString = string.Join(", ", consequences);
 
             if (transcriptId.StartsWith('X')) return;
             
-            var nirvanaTranscript = new Transcript(transcriptId, proteinId, hgvsCoding, hgvsProtein);
+            var nirvanaTranscript = new Transcript(transcriptId, proteinId, hgvsCoding, hgvsProtein, consequenceString);
             if (idToTranscript.ContainsKey(transcriptId))
                 throw new InvalidDataException($"Found duplicate entry for {transcriptId}");
             idToTranscript[transcriptId] = nirvanaTranscript;

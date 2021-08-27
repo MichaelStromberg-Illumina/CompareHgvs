@@ -75,7 +75,7 @@ namespace CompareHgvs
 
             if (transcriptId == null || transcriptId.StartsWith('X')) return;
 
-            var hgvsTranscript = new Transcript(transcriptId, proteinId, hgvsCoding, hgvsProtein);
+            var hgvsTranscript = new Transcript(transcriptId, proteinId, hgvsCoding, hgvsProtein, null);
             if (idToTranscript.ContainsKey(transcriptId))
                 throw new InvalidDataException($"Found duplicate entry for {transcriptId}");
             idToTranscript[transcriptId] = hgvsTranscript;
